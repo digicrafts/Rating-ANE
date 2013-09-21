@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Rate' target in the 'Rate' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
