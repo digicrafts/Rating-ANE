@@ -104,24 +104,24 @@ public class RatingExtensionContext extends FREContext {
         SharedPreferences.Editor editor = prefs.edit();
         
         // Check if first use
-        	if(firstUsed==0){        		
-        		firstUsed = System.currentTimeMillis();        		
-        		editor.putLong("firstUsed", firstUsed);
-        		isFirstLaunch=true;
-        	}
+        if(firstUsed==0){
+            firstUsed = System.currentTimeMillis();
+            editor.putLong("firstUsed", firstUsed);
+            isFirstLaunch=true;
+        }
         	
         // Set per week count
         usesPerWeek=usesCount/firstUsed/604800;
         
         // Check version
         try {
-        		PackageInfo info = mContext.getPackageManager().getPackageInfo(this.getActivity().getApplicationContext().getPackageName(),0);
-        		thisVersion=info.versionCode;
-        		if(thisVersion!=lastVersion){
-        			declinedThisVersion=false;
-				editor.putBoolean("declinedThisVersion", false);
-            		editor.putInt("lastVersion", thisVersion);
-        		}
+            PackageInfo info = mContext.getPackageManager().getPackageInfo(this.getActivity().getApplicationContext().getPackageName(),0);
+            thisVersion=info.versionCode;
+            if(thisVersion!=lastVersion){
+                declinedThisVersion=false;
+                editor.putBoolean("declinedThisVersion", false);
+                editor.putInt("lastVersion", thisVersion);
+            }
         } catch (PackageManager.NameNotFoundException e) {
             
         }
@@ -136,9 +136,12 @@ public class RatingExtensionContext extends FREContext {
 	
 	private void updateMessage()
 	{
+        Log.d(TAG,"updateMessage() applicationName:"+applicationName);
+
         // Replace text
         if(messageTitle=="") messageTitle="Rate " + applicationName;
-        if(message=="") message="If you enjoy using " + applicationName + ", would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!";
+//        if(message=="")
+            message="If you enjoy using " + applicationName + ", would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!";
         if(packageName=="")packageName=this.getActivity().getApplicationContext().getPackageName();
         
 	}
@@ -152,13 +155,13 @@ public class RatingExtensionContext extends FREContext {
 	    //preview mode?
 	    if (previewMode)
 	    {
-            	Log.d(TAG,"iRate preview mode is enabled - make sure you disable this for release");
+            Log.d(TAG,"iRate preview mode is enabled - make sure you disable this for release");
 	        return true;
 	    }	    
 	    //check if we've rated this version
 	    else if (ratedThisVersion)
 	    {
-	    		Log.d(TAG,"iRate did not prompt for rating because the user has already rated this version");
+            Log.d(TAG,"iRate did not prompt for rating because the user has already rated this version");
 	        return false;
 	    }
 	    //check if we've rated any version

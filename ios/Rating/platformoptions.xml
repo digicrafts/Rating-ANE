@@ -32,8 +32,8 @@ either expressed or implied, of the FreeBSD Project.
 <platform xmlns="http://ns.adobe.com/air/extension/3.1"> 
     <description > An optional description</description> 
     <copyright>2012 (optional)</copyright> 
-    <linkerOptions> 
+    <!--<linkerOptions> -->
 <!--        <option>-framework CoreMotion</option> -->
-    </linkerOptions> 
+    <!--</linkerOptions> -->
 </platform>
 
