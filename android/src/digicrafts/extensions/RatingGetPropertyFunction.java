@@ -88,6 +88,9 @@ public class RatingGetPropertyFunction implements FREFunction {
     				case promptAgainForEachNewVersion:
     					result = FREObject.newObject(cxt.promptAgainForEachNewVersion);
     					break;
+                    case isKindle:
+                        result = FREObject.newObject(cxt.isKindle);
+                        break;
 	    		}
 	    }
 	    catch (Exception e) {

@@ -47,8 +47,8 @@ public class RatingExtensionContext extends FREContext {
     public boolean ratedThisVersion=false;
     public boolean declinedThisVersion=false;
     public boolean declinedAnyVersion=false;
-    
-    private boolean isKindle=false;
+
+    public boolean isKindle=false;
     private boolean isFirstLaunch=false;
     private int	lastVersion=0;
     private int	lastRatedVersion=0;
@@ -100,6 +100,7 @@ public class RatingExtensionContext extends FREContext {
         ratedAnyVersion= prefs.getBoolean("ratedAnyVersion", false);
         declinedThisVersion= prefs.getBoolean("declinedThisVersion", false);
         declinedAnyVersion= prefs.getBoolean("declinedAnyVersion", false);
+        isKindle= prefs.getBoolean("isKindle", false);
         
         SharedPreferences.Editor editor = prefs.edit();
         

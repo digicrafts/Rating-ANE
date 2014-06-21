@@ -90,6 +90,10 @@ public class RatingSetPropertyFunction implements FREFunction {
     					boolValue=valueObj.getAsBool();
     					cxt.promptAgainForEachNewVersion=boolValue;
     					break;
+                    case isKindle:
+                        boolValue=valueObj.getAsBool();
+                        cxt.isKindle=boolValue;
+                        break;
 	    				
 	    		}
 

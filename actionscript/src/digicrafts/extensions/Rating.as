@@ -445,7 +445,23 @@ package digicrafts.extensions
 		{
 			getInstance()._setPropertyString("rateButtonLabel",value);
 		}
-
+        /**
+         * Enable/disable preview mode.
+         * If set to YES, iRate will always display the rating prompt on launch, regardless of how long the app has been in use or whether it's the latest version. Use this to proofread your message and check your configuration is correct during testing, but disable it for the final release (defaults to NO).
+         * @return
+         * @default false
+         */
+        public static function get isKindle():Boolean
+        {
+            return getInstance()._getPropertyBool("isKindle");
+        }
+        /**
+         * @private
+         */
+        public static function set isKindle(value:Boolean):void
+        {
+            getInstance()._setPropertyBool("isKindle",value);
+        }
 
 // Private Functions
 /////////////////////////////////////////////////////////////////////////////////////////////////////////

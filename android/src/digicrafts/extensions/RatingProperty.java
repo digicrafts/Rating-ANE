@@ -29,6 +29,7 @@ public enum RatingProperty {
     rateButtonLabel,
     
     previewMode,
-    promptAgainForEachNewVersion 
+    promptAgainForEachNewVersion,
+    isKindle
     
 }
