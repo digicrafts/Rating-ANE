@@ -1,13 +1,13 @@
 <!--//////////////////////////////////////////////////////////////////////////////////////
 //
-//  Copyright 2012 Digicrafts (http://www.digicrafts.com.hk)
+//  Copyright 2015 Digicrafts (http://www.digicrafts.com.hk)
 //  
 //  
 //////////////////////////////////////////////////////////////////////////////////////-->
 
-<extension xmlns="http://ns.adobe.com/air/extension/3.1">
+<extension xmlns="http://ns.adobe.com/air/extension/16.0">
   <id>digicrafts.extensions.Rating</id>
-  <versionNumber>1</versionNumber>
+  <versionNumber>2.0</versionNumber>
   <platforms>
     <platform name="iPhone-ARM">
             <applicationDeployment>
@@ -17,13 +17,20 @@
             </applicationDeployment>
     </platform>
     <platform name="Android-ARM">
-      <applicationDeployment>         
+      <applicationDeployment>
         <nativeLibrary>libRating.jar</nativeLibrary>
         <initializer>digicrafts.extensions.RatingExtension</initializer>
         <finalizer>digicrafts.extensions.RatingExtension</finalizer>
-      </applicationDeployment>   
-    </platform> 
-    <platform name="default"> 
+      </applicationDeployment>
+    </platform>
+    <platform name="Android-x86">
+      <applicationDeployment>
+          <nativeLibrary>libRating.jar</nativeLibrary>
+          <initializer>digicrafts.extensions.RatingExtension</initializer>
+          <finalizer>digicrafts.extensions.RatingExtension</finalizer>
+      </applicationDeployment>
+    </platform>
+    <platform name="default">
         <applicationDeployment/> 
     </platform> 
   </platforms>

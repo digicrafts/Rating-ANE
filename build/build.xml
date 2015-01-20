@@ -69,11 +69,11 @@
             <arg line='-include-classes ${classlist}'/>
         </exec>
 
-        <exec executable="${flex.sdk}/bin/asdoc" failonerror="true">
-            <arg line='-doc-sources ../actionscript/src'/>
-            <arg line='-output ../docs'/>
-            <arg line='-library-path "${flex.sdk}/frameworks/libs/air"'/>
-        </exec>
+        <!--<exec executable="${flex.sdk}/bin/asdoc" failonerror="true">-->
+            <!--<arg line='-doc-sources ../actionscript/src'/>-->
+            <!--<arg line='-output ../docs'/>-->
+            <!--<arg line='-library-path "${flex.sdk}/frameworks/libs/air"'/>-->
+        <!--</exec>-->
 
         <unzip src="../temp/swc/${name}.swc" dest="../temp/swc/content" overwrite="true"/>
         <copy file="../temp/swc/content/library.swf" todir="../temp/ios" overwrite="true"/>
@@ -93,6 +93,7 @@
             <arg line="-swc swc/${name}.swc"/>
             <arg line="-platform iPhone-ARM -platformoptions ../build/platform.xml -C ios/ ."/>
             <arg line="-platform Android-ARM -C android/ ."/>
+            <arg line="-platform Android-x86 -C android/ ."/>
             <arg line="-platform default -C default/ ."/>
         </exec>
 

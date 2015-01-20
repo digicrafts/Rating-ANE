@@ -90,6 +90,9 @@ package digicrafts.extensions
 				}
 				allowInstance=false;
 			}
+			if(extensionContext==null){
+				trace("[Rating] NOTICE: Rating Extension is not support in this system.")
+			}
 			return instance;
 		}
 		
